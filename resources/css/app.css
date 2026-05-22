@@ -1,0 +1,697 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Figtree', sans-serif;
+}
+
+.sisal-login-body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(37,99,235,.08), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(239,68,68,.08), transparent 35%),
+        #edf2f7;
+    overflow: hidden;
+    position: relative;
+}
+
+.sisal-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: .25;
+}
+
+.sisal-bg-circle-1 {
+    width: 320px;
+    height: 320px;
+    background: #2563eb;
+    top: -100px;
+    left: -100px;
+}
+
+.sisal-bg-circle-2 {
+    width: 350px;
+    height: 350px;
+    background: #ef4444;
+    right: -120px;
+    bottom: -120px;
+}
+
+.sisal-login-container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+.sisal-login-left {
+    width: 40%;
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sisal-brand-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.sisal-brand-icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 22px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.08);
+}
+
+.sisal-brand-header h1 {
+    font-size: 58px;
+    font-weight: 900;
+    color: #1d4ed8;
+    margin: 0;
+    line-height: 1;
+}
+
+.sisal-brand-header span {
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.sisal-brand-content {
+    margin-top: 90px;
+}
+
+.sisal-brand-content h2 {
+    font-size: 54px;
+    line-height: 1.15;
+    font-weight: 900;
+    color: #111827;
+    max-width: 650px;
+}
+
+.sisal-brand-content p {
+    margin-top: 25px;
+    font-size: 20px;
+    line-height: 1.9;
+    color: #4b5563;
+    max-width: 580px;
+}
+
+.sisal-graphic {
+    position: relative;
+    height: 220px;
+}
+
+.sisal-wave {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    bottom: 0;
+    border-radius: 30px;
+    background:
+        linear-gradient(135deg,
+        rgba(37,99,235,.9),
+        rgba(59,130,246,.7));
+    box-shadow: 0 25px 50px rgba(37,99,235,.25);
+}
+
+.sisal-alert-card {
+    position: absolute;
+    top: -10px;
+    right: 50px;
+    background: rgba(255,255,255,.75);
+    backdrop-filter: blur(16px);
+    padding: 18px 28px;
+    border-radius: 20px;
+    font-weight: 700;
+    color: #111827;
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pulse-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ef4444;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: .4;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+.sisal-login-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.glass-effect {
+    backdrop-filter: blur(18px);
+    background: rgba(255,255,255,.78);
+}
+
+.sisal-login-card {
+    width: 100%;
+    max-width: 620px;
+    padding: 60px;
+    border-radius: 34px;
+    border: 1px solid rgba(255,255,255,.5);
+    box-shadow: 0 25px 70px rgba(0,0,0,.08);
+}
+
+.sisal-login-avatar {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(37,99,235,.12), rgba(37,99,235,.03));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.sisal-login-title {
+    font-size: 58px;
+    font-weight: 900;
+    color: #111827;
+}
+
+.sisal-login-subtitle {
+    font-size: 18px;
+    color: #6b7280;
+    margin-top: 8px;
+}
+
+.sisal-label {
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.sisal-input-group {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #dce4ef;
+    background: white;
+    transition: .25s;
+}
+
+.sisal-input-group:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 5px rgba(37,99,235,.08);
+}
+
+.sisal-input-group .input-group-text {
+    border: none;
+    background: white;
+    color: #6b7280;
+    padding-left: 20px;
+}
+
+.sisal-input {
+    border: none !important;
+    box-shadow: none !important;
+    height: 64px;
+    font-size: 17px;
+}
+
+.sisal-password-toggle {
+    border: none !important;
+    background: white !important;
+    color: #6b7280 !important;
+    padding-right: 20px;
+}
+
+.sisal-login-btn {
+    height: 64px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    color: white;
+    font-weight: 800;
+    letter-spacing: .4px;
+    font-size: 16px;
+    transition: .25s;
+    box-shadow: 0 18px 35px rgba(37,99,235,.25);
+}
+
+.sisal-login-btn:hover {
+    transform: translateY(-3px);
+    color: white;
+}
+
+.sisal-forgot-link {
+    text-decoration: none;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.sisal-footer {
+    margin-top: 28px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+
+    .sisal-login-left {
+        width: 45%;
+        padding: 50px;
+    }
+
+    .sisal-brand-content h2 {
+        font-size: 44px;
+    }
+
+}
+
+@media (max-width: 991px) {
+
+    .sisal-login-left {
+        display: none;
+    }
+
+    .sisal-login-right {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .sisal-login-card {
+        padding: 40px 30px;
+    }
+
+    .sisal-login-title {
+        font-size: 42px;
+    }
+
+}
+
+
+.sisal-login-btn,
+.sisal-login-btn:hover,
+.sisal-login-btn:focus,
+.sisal-login-btn:disabled {
+    color: #ffffff !important;
+}
+
+.sisal-stats-panel {
+    position: absolute;
+    right: 40px;
+    top: -20px;
+    width: 320px;
+    background: rgba(255,255,255,.82);
+    backdrop-filter: blur(18px);
+    border-radius: 28px;
+    padding: 25px;
+    box-shadow: 0 25px 60px rgba(0,0,0,.12);
+    border: 1px solid rgba(255,255,255,.6);
+}
+
+.sisal-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+}
+
+.sisal-stat-item:not(:last-child) {
+    border-bottom: 1px solid #eef2f7;
+}
+
+.sisal-stat-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.sisal-stat-item h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.sisal-stat-item span {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+
+    .sisal-stats-panel {
+        width: 280px;
+        right: 10px;
+    }
+
+}
+
+@media (max-width: 991px) {
+
+    .sisal-stats-panel {
+        display: none;
+    }
+
+}
+
+
+/* ==============================
+   SISAL LOGIN RESPONSIVE FIX
+   ============================== */
+
+.sisal-login-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sisal-login-container {
+    min-height: 100dvh;
+}
+
+.sisal-login-right {
+    min-height: 100dvh;
+}
+
+.sisal-login-card {
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 1400px) {
+
+    .sisal-login-left {
+        width: 42%;
+        padding: 45px 48px;
+    }
+
+    .sisal-login-right {
+        width: 58%;
+        padding: 32px;
+    }
+
+    .sisal-brand-header h1 {
+        font-size: 48px;
+    }
+
+    .sisal-brand-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 32px;
+    }
+
+    .sisal-brand-content {
+        margin-top: 60px;
+    }
+
+    .sisal-brand-content h2 {
+        font-size: 42px;
+    }
+
+    .sisal-brand-content p {
+        font-size: 17px;
+    }
+
+    .sisal-login-card {
+        max-width: 560px;
+        padding: 44px;
+        border-radius: 28px;
+    }
+
+    .sisal-login-avatar {
+        width: 95px;
+        height: 95px;
+        font-size: 40px;
+    }
+
+    .sisal-login-title {
+        font-size: 44px;
+    }
+
+    .sisal-input {
+        height: 56px;
+        font-size: 15px;
+    }
+
+    .sisal-login-btn {
+        height: 56px;
+    }
+
+    .sisal-graphic {
+        height: 180px;
+    }
+
+    .sisal-wave {
+        height: 95px;
+    }
+
+    .sisal-stats-panel {
+        top: -35px;
+        right: 25px;
+        width: 285px;
+        padding: 18px;
+        border-radius: 24px;
+    }
+
+    .sisal-stat-item {
+        padding: 10px 0;
+    }
+
+    .sisal-stat-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 1100px) {
+
+    .sisal-login-left {
+        display: none;
+    }
+
+    .sisal-login-right {
+        width: 100%;
+        min-height: 100dvh;
+        padding: 32px 20px;
+        justify-content: center;
+    }
+
+    .sisal-login-card {
+        max-width: 560px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .sisal-login-right {
+        padding: 22px 14px;
+        justify-content: flex-start;
+    }
+
+    .sisal-login-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 32px 22px;
+        border-radius: 24px;
+        margin-top: 16px;
+    }
+
+    .sisal-login-avatar {
+        width: 82px;
+        height: 82px;
+        font-size: 34px;
+        margin-bottom: 14px;
+    }
+
+    .sisal-login-title {
+        font-size: 34px;
+        line-height: 1.1;
+    }
+
+    .sisal-login-subtitle {
+        font-size: 15px;
+    }
+
+    .sisal-input {
+        height: 54px;
+        font-size: 15px;
+    }
+
+    .sisal-input-group .input-group-text {
+        padding-left: 16px;
+    }
+
+    .sisal-password-toggle {
+        padding-right: 16px;
+    }
+
+    .sisal-login-btn {
+        height: 54px;
+        font-size: 14px;
+    }
+
+    .sisal-footer {
+        text-align: center;
+        font-size: 12px;
+        padding: 0 12px 20px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .sisal-login-right {
+        padding: 14px 10px;
+    }
+
+    .sisal-login-card {
+        padding: 26px 18px;
+        border-radius: 22px;
+    }
+
+    .sisal-login-title {
+        font-size: 30px;
+    }
+
+    .sisal-login-subtitle {
+        font-size: 14px;
+    }
+
+    .sisal-label {
+        font-size: 14px;
+    }
+
+    .sisal-forgot-link,
+    .form-check-label {
+        font-size: 13px;
+    }
+
+    .sisal-login-avatar {
+        width: 74px;
+        height: 74px;
+        font-size: 30px;
+    }
+
+    .sisal-input {
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .sisal-login-btn {
+        height: 52px;
+    }
+
+}
+
+@media (max-height: 760px) and (min-width: 1101px) {
+
+    .sisal-login-left {
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+
+    .sisal-brand-content {
+        margin-top: 36px;
+    }
+
+    .sisal-brand-content h2 {
+        font-size: 36px;
+    }
+
+    .sisal-brand-content p {
+        font-size: 16px;
+        margin-top: 16px;
+    }
+
+    .sisal-login-card {
+        padding: 34px 44px;
+    }
+
+    .sisal-login-avatar {
+        width: 78px;
+        height: 78px;
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .sisal-login-title {
+        font-size: 38px;
+    }
+
+    .sisal-login-subtitle {
+        font-size: 15px;
+    }
+
+    .sisal-input {
+        height: 50px;
+    }
+
+    .sisal-login-btn {
+        height: 52px;
+    }
+
+    .sisal-graphic {
+        height: 145px;
+    }
+
+    .sisal-wave {
+        height: 80px;
+    }
+
+    .sisal-stats-panel {
+        top: -50px;
+        padding: 14px 18px;
+    }
+
+    .sisal-stat-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .sisal-stat-item h4 {
+        font-size: 16px;
+    }
+
+    .sisal-stat-item span {
+        font-size: 12px;
+    }
+
+}

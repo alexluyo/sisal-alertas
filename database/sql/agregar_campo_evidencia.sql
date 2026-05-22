@@ -1,0 +1,2 @@
+ALTER TABLE alertas
+ADD COLUMN evidencia VARCHAR(255) NULL AFTER mensaje;
