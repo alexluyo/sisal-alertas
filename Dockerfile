@@ -37,6 +37,10 @@ RUN a2enmod rewrite
 # Config Apache
 COPY docker/apache.conf /etc/apache2/sites-available/000-default.conf
 
+# Script de inicio
+COPY docker/start.sh /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start.sh
+
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+CMD ["/usr/local/bin/start.sh"]
