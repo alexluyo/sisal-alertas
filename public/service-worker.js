@@ -1,14 +1,31 @@
-const CACHE_NAME = 'sisal-cache-v2';
+const CACHE_NAME = 'sisal-cache-v3';
+
+const urlsToCache = [
+    '/',
+    '/manifest.json',
+    '/icons/icon-192.png',
+    '/icons/icon-512.png',
+    '/firebase-messaging-sw.js'
+];
 
 self.addEventListener('install', event => {
+
     self.skipWaiting();
+
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(cache => cache.addAll(urlsToCache))
+    );
 });
 
 self.addEventListener('activate', event => {
+
     event.waitUntil(
         caches.keys().then(keys => {
             return Promise.all(
-                keys.map(key => caches.delete(key))
+                keys
+                    .filter(key => key !== CACHE_NAME)
+                    .map(key => caches.delete(key))
             );
         })
     );
@@ -20,7 +37,6 @@ self.addEventListener('fetch', event => {
 
     const requestUrl = new URL(event.request.url);
 
-    // NO cachear rutas dinámicas Laravel
     if (
         requestUrl.pathname.startsWith('/dashboard') ||
         requestUrl.pathname.startsWith('/alertas') ||
@@ -32,23 +48,8 @@ self.addEventListener('fetch', event => {
         return;
     }
 
-    // Cache solo para archivos estáticos
-    if (
-        requestUrl.pathname.startsWith('/build/') ||
-        requestUrl.pathname.startsWith('/icons/') ||
-        requestUrl.pathname.endsWith('.css') ||
-        requestUrl.pathname.endsWith('.js') ||
-        requestUrl.pathname.endsWith('.png') ||
-        requestUrl.pathname.endsWith('.webp')
-    ) {
-        event.respondWith(
-            caches.match(event.request).then(response => {
-                return response || fetch(event.request);
-            })
-        );
-
-        return;
-    }
-
-    event.respondWith(fetch(event.request));
+    event.respondWith(
+        caches.match(event.request)
+            .then(response => response || fetch(event.request))
+    );
 });

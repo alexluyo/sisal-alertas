@@ -1,21 +1,25 @@
 {
     "name": "SISAL - Sistema de Alertas",
     "short_name": "SISAL",
-    "start_url": "/dashboard",
+    "start_url": "/",
+    "scope": "/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#dc3545",
     "orientation": "portrait",
+    "description": "Sistema Integrado de Seguridad y Alertas Locales",
     "icons": [
         {
             "src": "/icons/icon-192.png",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         },
         {
             "src": "/icons/icon-512.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ]
 }
