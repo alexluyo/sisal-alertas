@@ -304,6 +304,8 @@ async function registrarTokenFCM(idAnexo = null) {
             return;
         }
 
+        console.log('Iniciando activación FCM...');
+
         const permiso = await Notification.requestPermission();
 
         if (permiso !== 'granted') {
@@ -311,7 +313,20 @@ async function registrarTokenFCM(idAnexo = null) {
             return;
         }
 
-        const registroSW = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
+        let registroSW = null;
+
+        if ('serviceWorker' in navigator) {
+
+            registroSW = await navigator.serviceWorker.getRegistration('/firebase-messaging-sw.js');
+
+            if (!registroSW) {
+                registroSW = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
+            }
+
+        } else {
+            alert('Este navegador no soporta Service Workers.');
+            return;
+        }
 
         const token = await getToken(messaging, {
             vapidKey: vapidKey,
