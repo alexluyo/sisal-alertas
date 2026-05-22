@@ -1,9 +1,0 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyDZHzg97344lqzH4fjpb_tda5c0VMO36es",
-    authDomain: "sisal-e8016.firebaseapp.com",
-    projectId: "sisal-e8016",
-    storageBucket: "sisal-e8016.firebasestorage.app",
-    messagingSenderId: "473592016862",
-    appId: "1:473592016862:web:9dd66833be41b9a5cfb74f",
-    measurementId: "G-9EKQLZYZ3V"
-  };
