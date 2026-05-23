@@ -313,7 +313,7 @@ const firebaseConfig = {
 
 const appFirebase = initializeApp(firebaseConfig);
 const messaging = getMessaging(appFirebase);
-const vapidKey = "BJAm_F7Hv7O4oPywJX9E67sXSBaVbmOSuWLk1i9-45VaKYWECClKcp-Ey7ts1om9NAvk3g80t41O6hYB49q3pyI";
+const vapidKey = "BHrITCBDpepXq9Keq33G9IhfM2MzSkVSGSspo4vl1Zxm1ifMxBiA_Cy18rUqZMTrs_EAuPc9TUxQ2dm58M6S2rw";
 
 async function registrarTokenFCM(idAnexo = null) {
     try {
