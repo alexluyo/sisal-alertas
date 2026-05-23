@@ -251,7 +251,23 @@
 <script>
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js');
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+
+                try {
+
+                    await navigator.serviceWorker.register('/firebase-messaging-sw.js');
+
+                    console.log('Service Worker registrado correctamente');
+
+                } catch (error) {
+
+                    console.error('Error registrando Service Worker:', error);
+
+                }
+
+            });
+        }
     });
 }
 
