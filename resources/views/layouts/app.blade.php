@@ -390,7 +390,7 @@ if (btnConfirmarPush) {
         const modalElement = document.getElementById('modalActivarAlertas');
 
         if (modalElement) {
-            const modal = bootstrap.Modal.getInstance(modalElement);
+            const modal = window.bootstrap?.Modal?.getInstance(modalElement);
             if (modal) {
                 modal.hide();
             }
